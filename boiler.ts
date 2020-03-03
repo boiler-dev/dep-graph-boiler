@@ -10,7 +10,7 @@ export const generate: GenerateBoiler = async ({
   for (const file of files) {
     const { name, source } = file
 
-    if (name === "dep-graph.ts") {
+    if (name === "depGraph.ts") {
       actions.push({
         action: "write",
         path: join(cwdPath, "src", name),
