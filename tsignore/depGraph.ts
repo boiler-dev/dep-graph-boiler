@@ -49,7 +49,7 @@ export class DepGraph<T> {
     return function DFS(currentNode: any): void {
       visited[currentNode] = true
       currentPath.push(currentNode)
-      edges[currentNode].forEach(function(node) {
+      edges[currentNode].forEach(function (node) {
         if (!visited[node]) {
           DFS(node)
         } else if (currentPath.indexOf(node) >= 0) {
@@ -163,7 +163,7 @@ export class DepGraph<T> {
         [],
         this.circular
       )
-      keys.forEach(function(n) {
+      keys.forEach(function (n) {
         CycleDFS(n)
       })
 
@@ -176,10 +176,10 @@ export class DepGraph<T> {
       // Find all potential starting points (nodes with nothing depending on them) an
       // run a DFS starting at these points to get the order
       keys
-        .filter(node => {
+        .filter((node) => {
           return this.incomingEdges[node].length === 0
         })
-        .forEach(function(n) {
+        .forEach(function (n) {
           DFS(n)
         })
 
